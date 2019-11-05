@@ -9,7 +9,6 @@ BiocManager::install("msdata")
 BiocManager::install("pheatmap")
 BiocManager::install("ProtGenerics")
 
-alibrary(xcms)
 library(faahKO)
 library(RColorBrewer)
 library(pander)
@@ -19,7 +18,7 @@ library(mzR)
 library(ProtGenerics)
 
 
-Dados_cru  <- xcmsRaw("Bases/Teste/FWS_5percNaCL/alg8.cdf", profstep = 1, profmethod = "bin", profparam =
+Dados_cru  <- xcmsRaw("C://Users/elton/Documents/Bases/Teste/FWS_100perNaCl/alg10.cdf", profstep = 1, profmethod = "bin", profparam =
           list(), includeMSn=FALSE, mslevel=NULL, scanrange=NULL)
 
 names(attributes(Dados_cru))
@@ -39,7 +38,7 @@ plot(mz.scan1, intensity.scan1, type="h", main=paste("Scan 1 of file", basename(
 
 #copia e cola
 cdfpath <- system.file("cdf")
-cdffiles <- list.files("Bases/Teste/FWS_5percNaCL/", recursive = TRUE, full.names = TRUE)
+cdffiles <- list.files("C://Users/elton/Documents/Bases/Teste/", recursive = TRUE, full.names = TRUE)
 xr<-xcmsRaw(cdffiles[1])
 xr
 
