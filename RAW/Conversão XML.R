@@ -7,11 +7,6 @@ rownames(foodMN) <- foods[, "Country"]
 head(foodMN)
 foo.pca <- opls(foodMN)
 
-
-
-
-
-
 attach(foodMN)
 strF(dataMatrix)
 imageF(dataMatrix)
@@ -24,16 +19,11 @@ head(sacurine.neg_sampleMetadata_matrix)
 sacurine.pca <- opls(sacurine.neg_sampleMetadata_matrix)
 
 
-
-
-
-
-
-
-fileurl <- "Bases/feces_metabolites.xml"
+fileurl <- "C://Users/elton/Documents/Bases/feces_metabolites.xml"
 doc <- xmlParse(fileurl,useInternalNodes = TRUE) ##- is to parse the xml content, the parsed content is stored into doc
 doc
 
+xl <-xmlToList(doc, addAttributes = TRUE, simplify = FALSE) #TESTE 2
 xL <- xmlToList(doc) ###is to convert xml doc into List
 
 data <- ldply(xL, data.frame)
